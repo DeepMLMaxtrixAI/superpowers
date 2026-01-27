@@ -117,6 +117,9 @@ Fetch and follow instructions from https://raw.githubusercontent.com/obra/superp
 - **finishing-a-development-branch** - Merge/PR decision workflow
 - **subagent-driven-development** - Fast iteration with two-stage review (spec compliance, then code quality)
 
+**AI Processing & Analysis**
+- **signal-routing** - Intelligent signal-to-engine routing for specialized AI analysis (behavior forecasting, legal semantics, anomaly detection, contract extraction, evidence verification, timeline analysis, compliance mapping)
+
 **Meta**
 - **writing-skills** - Create new skills following best practices (includes testing methodology)
 - **using-superpowers** - Introduction to the skills system
