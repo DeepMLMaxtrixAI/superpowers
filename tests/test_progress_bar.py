@@ -54,5 +54,21 @@ def test_progress_bar():
     print("All tests passed! ✓")
     print("=" * 60)
 
+def test_edge_cases():
+    """Test edge cases for the progress_bar function."""
+    
+    print("\nTesting edge cases:")
+    print("-" * 60)
+    
+    # Test division by zero
+    try:
+        progress_bar(100, total=0)
+        print("  ✗ FAILED: Should raise ValueError for total=0")
+        assert False
+    except ValueError as e:
+        print(f"  ✓ PASSED: Correctly raises ValueError for total=0")
+        assert "total cannot be zero" in str(e).lower()
+
 if __name__ == '__main__':
     test_progress_bar()
+    test_edge_cases()

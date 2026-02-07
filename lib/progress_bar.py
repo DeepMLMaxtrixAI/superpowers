@@ -11,6 +11,9 @@ def progress_bar(current, total=2000, bar_length=20, label="Complete"):
     Returns:
         A formatted string with progress bar, percentage, and label
     
+    Raises:
+        ValueError: If total is 0
+    
     Examples:
         >>> progress_bar(1179)
         '████████████ 59% Complete'
@@ -21,6 +24,9 @@ def progress_bar(current, total=2000, bar_length=20, label="Complete"):
         >>> progress_bar(2500)
         '█████████████████████████ 125% Complete'
     """
+    if total == 0:
+        raise ValueError("total cannot be zero")
+    
     ratio = current / total
     blocks = round(ratio * bar_length)
     bar = "█" * blocks
