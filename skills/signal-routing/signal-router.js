@@ -157,3 +157,58 @@ export function executeMasterPrompt(signalType) {
         }
     };
 }
+
+/**
+ * Get all registered agents and their details
+ * @returns {Object} Map of agent names to agent details
+ */
+export function getAgents() {
+    const config = loadSignalEngineMapping();
+    return config.agents || {};
+}
+
+/**
+ * Get details for a specific agent
+ * @param {string} agentName - Name of the agent (e.g., 'KPI_Robot', 'Auto_Owl')
+ * @returns {Object} Agent details including trait, behavior, engine, and description
+ */
+export function getAgentDetails(agentName) {
+    const config = loadSignalEngineMapping();
+    const agents = config.agents || {};
+
+    if (!agents[agentName]) {
+        throw new Error(`Unknown agent: ${agentName}. Available agents: ${Object.keys(agents).join(', ')}`);
+    }
+
+    return {
+        name: agentName,
+        ...agents[agentName]
+    };
+}
+
+/**
+ * Execute the agent prompt using SWOT-AI-REFINE-OODA methodology
+ * @param {string} agentName - Name of the agent to execute
+ * @returns {Object} Agent execution result with OODA steps and intrinsic value unlock
+ */
+export function executeAgentPrompt(agentName) {
+    const agent = getAgentDetails(agentName);
+    const metadata = getSystemMetadata();
+    const engineDetails = getEngineDetails(agent.engine);
+
+    return {
+        agentPrompt: metadata.agent_prompt,
+        agent: agentName,
+        trait: agent.trait,
+        behavior: agent.behavior,
+        execution: {
+            step1_observe: `${agent.trait} observation via ${agentName}`,
+            step2_orient: 'SWOT_Analysis',
+            step3_decide: 'REFINE_Loop',
+            step4_act: `OODA_Act via ${agent.engine}`,
+            step5_unlock: 'Intrinsic_Value',
+            engine: engineDetails,
+            safety: metadata.safety || 'AI_SAFE'
+        }
+    };
+}
