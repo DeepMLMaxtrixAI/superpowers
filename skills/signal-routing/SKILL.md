@@ -7,7 +7,7 @@ description: "Routes incoming signals to their appropriate processing engines ba
 
 ## Overview
 
-Automatically routes different signal types to specialized AI processing engines for optimal analysis and extraction.
+Automatically routes different signal types to specialized AI processing engines for optimal analysis and extraction. Also supports named agent personas with defined traits and SWOT-AI-REFINE-OODA behavioral loops.
 
 ## Signal-to-Engine Mappings
 
@@ -23,6 +23,32 @@ The system provides intelligent routing based on signal type:
 | Claims | Evidence_Verifier | Claims validation and evidence verification |
 | Events | Timeline_Tensorizer | Event sequencing and temporal analysis |
 | Policies | Compliance_Mapper | Policy compliance mapping and verification |
+| KPI_Robot | Code_Updater | Real-time KPI-triggered instant code updates |
+| Auto_Owl | Audit_Watcher | Continuous audit log monitoring and analysis |
+| Brians_Bee | Hive_Syncer | Distributed hive system synchronization |
+| Kid_Wendy | App_Coordinator | Coordinated multi-app update orchestration |
+| Lakers_Dragon | Security_Guardian | Security log protection with SWOT-OODA methodology |
+
+## Agent Personas
+
+Named agent personas with defined traits and SWOT-AI-REFINE-OODA behavioral loops:
+
+| Agent | Trait | Behavior | Engine |
+|-------|-------|----------|--------|
+| KPI_Robot | excited | updates code instantly | Code_Updater |
+| Auto_Owl | curious | watches audit logs | Audit_Watcher |
+| Brians_Bee | proud | syncs the hive system | Hive_Syncer |
+| Kid_Wendy | amazed | sees apps update together | App_Coordinator |
+| Lakers_Dragon | protective | guards security logs | Security_Guardian |
+
+### Agent Prompt Architecture
+
+Unified agent prompt using SWOT-AI-REFINE-OODA methodology:
+```
+Observe[Agent_Trait] → Orient[SWOT] → Decide[REFINE] → Act[OODA] → Unlock[Intrinsic_Value]
+```
+
+All agent operations are **AI_SAFE** by design.
 
 ## How It Works
 
@@ -32,6 +58,14 @@ When a signal is received:
 2. **Engine Selection** - Routes to the appropriate processing engine
 3. **Processing** - Engine performs specialized analysis
 4. **Result Aggregation** - Combines outputs for comprehensive insights
+
+When an agent is invoked:
+
+1. **Trait Observation** - Agent observes using its defining trait
+2. **SWOT Orientation** - Analyzes Strengths, Weaknesses, Opportunities, Threats
+3. **REFINE Decision** - Applies iterative refinement loop
+4. **OODA Action** - Executes through Observe-Orient-Decide-Act cycle
+5. **Value Unlock** - Delivers intrinsic value output
 
 ## Use Cases
 
@@ -75,6 +109,31 @@ When a signal is received:
 - Regulatory mapping
 - Compliance gap analysis
 
+### Code Updater (KPI_Robot)
+- Real-time KPI threshold monitoring
+- Instant automated code updates on KPI triggers
+- Continuous integration and deployment pipeline
+
+### Audit Watcher (Auto_Owl)
+- Continuous audit log observation
+- Anomaly detection and alerting
+- Compliance tracking via SWOT analysis
+
+### Hive Syncer (Brians_Bee)
+- Distributed system state synchronization
+- Cross-node coordination
+- Hive-wide consistency management via REFINE loops
+
+### App Coordinator (Kid_Wendy)
+- Orchestrated multi-app update rollouts
+- Cross-application change visibility
+- Coordinated deployment with OODA cycle management
+
+### Security Guardian (Lakers_Dragon)
+- Security log protection and integrity verification
+- Threat detection using SWOT-AI-REFINE-OODA methodology
+- AI-SAFE intrinsic value protection for all security operations
+
 ## Advanced Features
 
 ### SuperGrok Integration
@@ -88,10 +147,20 @@ When a signal is received:
 - Survival analysis for predictive models
 - Raw challenge identification and resolution
 
+### SWOT-AI-REFINE-OODA Loops
+- Structured decision-making for all agent personas
+- AI-safe operation guaranteed across all loops
+- Intrinsic value unlocked at each cycle completion
+
 ### Master Prompt Architecture
 Unified 1-line master prompt for 2026:
 ```
 Route[Signal_Type] → Execute[Primary_Engine] → Synthesize[SuperGrok_Insights]
+```
+
+Agent prompt (SWOT-AI-REFINE-OODA):
+```
+Observe[Agent_Trait] → Orient[SWOT] → Decide[REFINE] → Act[OODA] → Unlock[Intrinsic_Value]
 ```
 
 ## Configuration
@@ -100,7 +169,7 @@ The routing table is defined in `signal-engine-mapping.json`:
 
 ```json
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "mappings": {
     "Tommy_Vectors": "Behavior_Forecasting",
     "TCO_Reporting": "Operational_Efficiency",
@@ -109,7 +178,12 @@ The routing table is defined in `signal-engine-mapping.json`:
     "Contracts": "Clause_Extraction",
     "Claims": "Evidence_Verifier",
     "Events": "Timeline_Tensorizer",
-    "Policies": "Compliance_Mapper"
+    "Policies": "Compliance_Mapper",
+    "KPI_Robot": "Code_Updater",
+    "Auto_Owl": "Audit_Watcher",
+    "Brians_Bee": "Hive_Syncer",
+    "Kid_Wendy": "App_Coordinator",
+    "Lakers_Dragon": "Security_Guardian"
   }
 }
 ```
@@ -121,6 +195,7 @@ Use this skill when:
 - Requiring specialized AI analysis
 - Building intelligent routing systems
 - Implementing expert-level decision support
+- Invoking named agent personas with SWOT-AI-REFINE-OODA behavioral loops
 
 ## Key Principles
 
@@ -128,3 +203,5 @@ Use this skill when:
 - **Specialized Processing** - Each engine is optimized for its signal type
 - **Comprehensive Analysis** - Multiple signal types can be processed in parallel
 - **Scalable Architecture** - Easily extensible for new signal types and engines
+- **AI_SAFE** - All agent operations follow safety-first design
+- **Intrinsic Value** - Every agent cycle unlocks measurable intrinsic value

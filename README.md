@@ -119,6 +119,7 @@ Fetch and follow instructions from https://raw.githubusercontent.com/obra/superp
 
 **AI Processing & Analysis**
 - **signal-routing** - Intelligent signal-to-engine routing for specialized AI analysis (behavior forecasting, legal semantics, anomaly detection, contract extraction, evidence verification, timeline analysis, compliance mapping)
+- **kpi-agents** - Five named AI agent personas with SWOT-AI-REFINE-OODA behavioral loops: KPI Robot (excited, updates code instantly), Auto Owl (curious, watches audit logs), Brian's Bee (proud, syncs the hive system), Kid Wendy (amazed, sees apps update together), Lakers Dragon (protective, guards security logs) — all AI_SAFE with intrinsic value unlock
 
 **Meta**
 - **writing-skills** - Create new skills following best practices (includes testing methodology)
