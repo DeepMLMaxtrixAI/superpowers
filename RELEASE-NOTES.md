@@ -1,5 +1,32 @@
 # Superpowers Release Notes
 
+## v4.1.0 (2026-03-08)
+
+### New Skills
+
+**brand-architecture — Cultural Dominance Framework**
+
+Adds a six-layer Brand Stack skill that transforms a raw idea into multi-decade cultural equity.
+
+The framework is driven by two formulas:
+
+- *Master formula:* Clear archetype + Compelling narrative + Integrated ecosystem = Cultural dominance
+- *Equity formula:* Simple Name + Strong Visual Symbol + Authority Persona + Cultural Story Loop = Multi-Decade Brand Equity
+
+The six layers (bottom to top):
+
+1. **BRAND CORE** — Irreducible positioning sentence
+2. **ARCHETYPE IDENTITY** — Human character the brand embodies (12 canonical archetypes)
+3. **NARRATIVE ENGINE** — Self-reinforcing Cultural Story Loop (Tension → Encounter → Transformation → Proof → Re-entry)
+4. **PRODUCT ECOSYSTEM** — Entry, core, and ascension offers that embody the narrative
+5. **TRUST INFRASTRUCTURE** — Authority credentials, social proof, transparency, consistency, community
+6. **CULTURAL AMPLIFICATION** — Organic loops, cultural hooks, creator partnerships, category creation, ritual design
+
+Includes:
+- `brand-architecture.json` — Full configuration for all layers, formulas, and the SWOT-BRAND-REFINE decision loop
+- `brand-engine.js` — Programmatic interface: `loadBrandArchitecture`, `getLayerOrder`, `getLayerDetails`, `isValidArchetype`, `applyMasterFormula`, `applyEquityFormula`, `executeDecisionLoop`, `getCulturalStoryLoop`, `auditBrandStack`
+- `tests/brand-architecture/test-brand-engine.js` — 17 tests covering all functions
+
 ## v4.0.3 (2025-12-26)
 
 ### Improvements

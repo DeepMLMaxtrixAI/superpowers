@@ -1,0 +1,126 @@
+{
+  "version": "1.0.0",
+  "description": "Brand Architecture framework configuration — six-layer brand stack producing multi-decade cultural equity",
+  "master_formula": {
+    "inputs": ["clear_archetype", "compelling_narrative", "integrated_ecosystem"],
+    "output": "cultural_dominance"
+  },
+  "equity_formula": {
+    "inputs": ["simple_name", "strong_visual_symbol", "authority_persona", "cultural_story_loop"],
+    "output": "multi_decade_brand_equity"
+  },
+  "layers": {
+    "BRAND_CORE": {
+      "level": 1,
+      "description": "The irreducible truth of why the brand exists",
+      "inputs": ["founding_intent", "unique_mechanism", "non_negotiable_values"],
+      "output": "positioning_sentence",
+      "test": "Can a stranger repeat it after one hearing?",
+      "questions": [
+        "What problem does this brand exist to solve?",
+        "Who specifically is it for?",
+        "What would be lost if this brand disappeared tomorrow?"
+      ]
+    },
+    "ARCHETYPE_IDENTITY": {
+      "level": 2,
+      "description": "The human character the brand consistently embodies",
+      "inputs": ["brand_core", "audience_psychology", "cultural_context"],
+      "output": "named_archetype_with_traits",
+      "archetypes": [
+        "Hero", "Sage", "Rebel", "Caregiver", "Creator", "Explorer",
+        "Ruler", "Jester", "Innocent", "Lover", "Magician", "Everyman"
+      ],
+      "selection_criteria": [
+        "Aligns with the audience's self-image or aspirational identity",
+        "Differentiates from the category leader's archetype",
+        "Can be performed consistently across every touchpoint"
+      ],
+      "authority_persona_components": {
+        "simple_name": "Memorable, distinct, ownable — 1 to 2 syllables preferred",
+        "strong_visual_symbol": "Instantly recognisable at any size, in any colour",
+        "tone_of_voice": "Three adjectives governing all written and spoken output"
+      }
+    },
+    "NARRATIVE_ENGINE": {
+      "level": 3,
+      "description": "The self-reinforcing story loop that makes the brand culturally sticky",
+      "inputs": ["archetype_identity", "audience_desire", "cultural_tension"],
+      "output": "brand_story_and_cultural_story_loop",
+      "structure": "Hero's Journey — audience as hero, brand as guide",
+      "cultural_story_loop": [
+        "Tension — audience's unsolved problem",
+        "Encounter — brand enters as guide",
+        "Transformation — audience achieves desired state",
+        "Proof — social validation, others see the transformation",
+        "Re-entry — transformed audience recruits new initiates"
+      ],
+      "checklist": [
+        "Tension is real and felt, not manufactured",
+        "Brand's role is guide, not hero",
+        "Transformation is specific and verifiable",
+        "Proof mechanism exists",
+        "Re-entry path is frictionless"
+      ]
+    },
+    "PRODUCT_ECOSYSTEM": {
+      "level": 4,
+      "description": "The integrated set of offerings that embody the narrative",
+      "inputs": ["narrative_engine", "revenue_model", "operational_constraints"],
+      "output": "product_map",
+      "offer_tiers": {
+        "entry_offer": "Low friction, demonstrates core value, builds trust",
+        "core_offer": "Primary revenue driver, deepest expression of Brand Core",
+        "ascension_offer": "Highest transformation, highest price, creates advocates"
+      },
+      "integration_test": "Remove any product — does the remaining ecosystem still tell a coherent story? If yes, the removed product does not belong."
+    },
+    "TRUST_INFRASTRUCTURE": {
+      "level": 5,
+      "description": "The systems and signals that convert interest into belief",
+      "inputs": ["product_ecosystem", "audience_scepticism_profile", "competitive_landscape"],
+      "output": "trust_stack",
+      "trust_signals": {
+        "authority_credentials": "Awards, publications, partnerships — expertise proof",
+        "social_proof": "Testimonials, case studies, user counts — safety in numbers",
+        "transparency": "Pricing pages, open roadmaps, public metrics — honesty premium",
+        "consistency": "Regular publishing cadence, on-brand responses — reliability signal",
+        "community": "Forums, user groups, ambassador programmes — belonging driver"
+      },
+      "trust_velocity_principle": "Trust compounds. Consistent small deposits over time outperform large one-time signals. Build systems, not campaigns."
+    },
+    "CULTURAL_AMPLIFICATION": {
+      "level": 6,
+      "description": "The mechanisms that cause the brand to spread without paid acquisition",
+      "inputs": ["trust_infrastructure", "community", "cultural_moment_identification"],
+      "output": "amplification_playbook",
+      "mechanisms": {
+        "organic_loops": "Product features that make sharing intrinsic",
+        "cultural_hooks": "Attaching to existing cultural conversations with genuine relevance",
+        "creator_partnerships": "Voices who already own the audience's attention",
+        "category_creation": "Naming and owning a new category makes the brand synonymous with it",
+        "ritual_design": "Repeated behaviours that bond the community"
+      },
+      "dominance_indicator": "The brand is referenced by people who have never purchased it. Journalists use it as a category shorthand. Competitors are described relative to it."
+    }
+  },
+  "decision_loop": {
+    "name": "SWOT-BRAND-REFINE",
+    "prompt": "Observe[Brand_Layer] → Orient[SWOT] → Decide[REFINE] → Act[Amplify] → Measure[Equity_Delta]",
+    "steps": [
+      "Observe — Audit the target layer against its output criteria",
+      "Orient — SWOT analysis of that layer's current state",
+      "Decide — REFINE: generate options, evaluate, eliminate weak ones, select strongest",
+      "Act — Implement the highest-leverage change",
+      "Measure — Track equity delta to confirm improvement"
+    ]
+  },
+  "key_principles": [
+    "Archetype before aesthetics — Identity drives visuals, never the reverse",
+    "Narrative before features — Story creates desire; features satisfy it",
+    "Trust before amplification — Amplifying a broken trust stack accelerates failure",
+    "Consistency compounds — Every touchpoint either deposits into or withdraws from brand equity",
+    "Culture cannot be bought — It is earned through authentic, repeated narrative delivery",
+    "Simple Name, lasting power — Complexity in naming is a tax on every future interaction"
+  ]
+}
