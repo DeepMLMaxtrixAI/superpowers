@@ -23,6 +23,7 @@ The system provides intelligent routing based on signal type:
 | Claims | Evidence_Verifier | Claims validation and evidence verification |
 | Events | Timeline_Tensorizer | Event sequencing and temporal analysis |
 | Policies | Compliance_Mapper | Policy compliance mapping and verification |
+| Parenti_Interpretation | Political_Economy_Analyzer | Economic imperialism, drug policy critique, and critics analysis |
 | KPI_Robot | Code_Updater | Real-time KPI-triggered instant code updates |
 | Auto_Owl | Audit_Watcher | Continuous audit log monitoring and analysis |
 | Brians_Bee | Hive_Syncer | Distributed hive system synchronization |
@@ -109,6 +110,14 @@ When an agent is invoked:
 - Regulatory mapping
 - Compliance gap analysis
 
+### Political Economy Analyzer (Parenti_Interpretation)
+- Economic imperialism theory analysis (corporate and capital interests driving intervention)
+- Drug policy critique (drug war as instrument of political control and economic intervention)
+- Critics triangulation:
+  - Security explanations (national security counter-perspective)
+  - Geopolitical strategy (great-power competition counter-perspective)
+  - Policy complexity (multi-causal, non-reductive counter-perspective)
+
 ### Code Updater (KPI_Robot)
 - Real-time KPI threshold monitoring
 - Instant automated code updates on KPI triggers
@@ -169,7 +178,7 @@ The routing table is defined in `signal-engine-mapping.json`:
 
 ```json
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "mappings": {
     "Tommy_Vectors": "Behavior_Forecasting",
     "TCO_Reporting": "Operational_Efficiency",
@@ -179,6 +188,7 @@ The routing table is defined in `signal-engine-mapping.json`:
     "Claims": "Evidence_Verifier",
     "Events": "Timeline_Tensorizer",
     "Policies": "Compliance_Mapper",
+    "Parenti_Interpretation": "Political_Economy_Analyzer",
     "KPI_Robot": "Code_Updater",
     "Auto_Owl": "Audit_Watcher",
     "Brians_Bee": "Hive_Syncer",

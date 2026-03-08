@@ -17,11 +17,17 @@ Contracts              → Clause_Extraction
 Claims                 → Evidence_Verifier
 Events                 → Timeline_Tensorizer
 Policies               → Compliance_Mapper
+Parenti_Interpretation → Political_Economy_Analyzer
 ```
 
 ## Implementation Status
 
 ✅ **All mappings implemented** in `/skills/signal-routing/signal-engine-mapping.json`
+
+✅ **Parenti Interpretation** added as `Parenti_Interpretation → Political_Economy_Analyzer` covering:
+- Economic imperialism theory (corporate/capital interests driving intervention)
+- Political critique of drug policy (drug war as instrument of control)
+- Critics triangulation: security explanations, geopolitical strategy, policy complexity
 
 ✅ **Router module** created in `/skills/signal-routing/signal-router.js`
 
@@ -110,7 +116,7 @@ node tests/signal-routing/test-signal-router.js
 
 All 11 tests validate:
 1. Configuration loading
-2. Individual signal routing (8 signals)
+2. Individual signal routing (14 signals including Parenti_Interpretation)
 3. Available signal types
 4. Available engines
 5. Engine details retrieval
