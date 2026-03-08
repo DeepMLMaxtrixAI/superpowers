@@ -14,7 +14,12 @@
     "Auto_Owl": "Audit_Watcher",
     "Brians_Bee": "Hive_Syncer",
     "Kid_Wendy": "App_Coordinator",
-    "Lakers_Dragon": "Security_Guardian"
+    "Lakers_Dragon": "Security_Guardian",
+    "Law_Givers": "Order_Engine",
+    "Explorers": "Innovation_Engine",
+    "Oracles": "Economics_Engine",
+    "Guardians": "Security_Fortress",
+    "Gremlins": "Chaos_Engine"
   },
   "engines": {
     "Behavior_Forecasting": {
@@ -91,6 +96,41 @@
       "trait": "protective",
       "capabilities": ["security_log_guarding", "threat_detection", "intrinsic_value_protection"],
       "frameworks": ["SWOT_Analysis", "OODA_Loop", "REFINE_Loop", "AI_SAFE"]
+    },
+    "Order_Engine": {
+      "description": "Governance, rules, and structural integrity engine (Law-Givers - principled)",
+      "agent": "Law_Givers",
+      "trait": "principled",
+      "capabilities": ["rule_enforcement", "governance_framework", "structural_integrity", "policy_codification"],
+      "frameworks": ["OODA_Loop", "Compliance_Framework", "REFINE_Loop"]
+    },
+    "Innovation_Engine": {
+      "description": "Discovery, experimentation, and creative exploration engine (Explorers - visionary)",
+      "agent": "Explorers",
+      "trait": "visionary",
+      "capabilities": ["experimentation", "creative_discovery", "prototype_generation", "paradigm_shifting"],
+      "frameworks": ["OODA_Loop", "REFINE_Loop", "Monte_Carlo_Simulations"]
+    },
+    "Economics_Engine": {
+      "description": "Value forecasting, resource optimization, and economic modeling engine (Oracles - prescient)",
+      "agent": "Oracles",
+      "trait": "prescient",
+      "capabilities": ["value_forecasting", "resource_optimization", "economic_modeling", "cost_benefit_analysis"],
+      "frameworks": ["JEDI_ABCDE-BAYES", "Monte_Carlo_Simulations", "OODA_Loop"]
+    },
+    "Security_Fortress": {
+      "description": "Defense-in-depth protection and threat neutralization engine (Guardians - vigilant)",
+      "agent": "Guardians",
+      "trait": "vigilant",
+      "capabilities": ["threat_neutralization", "defense_in_depth", "access_control", "integrity_verification"],
+      "frameworks": ["SWOT_Analysis", "OODA_Loop", "REFINE_Loop", "AI_SAFE"]
+    },
+    "Chaos_Engine": {
+      "description": "Controlled chaos injection and resilience stress-testing engine (Gremlins - disruptive)",
+      "agent": "Gremlins",
+      "trait": "disruptive",
+      "capabilities": ["chaos_injection", "stress_testing", "resilience_validation", "failure_mode_discovery"],
+      "frameworks": ["OODA_Loop", "Monte_Carlo_Simulations", "REFINE_Loop"]
     }
   },
   "agents": {
@@ -123,6 +163,41 @@
       "behavior": "guards security logs",
       "engine": "Security_Guardian",
       "description": "Protects security logs using SWOT-AI-REFINE-OODA methodology to ensure AI-SAFE operations"
+    },
+    "Law_Givers": {
+      "trait": "principled",
+      "behavior": "establishes order through governance and rules",
+      "engine": "Order_Engine",
+      "archetype": "Order",
+      "description": "Codifies rules, enforces governance frameworks, and maintains structural integrity across the civilization"
+    },
+    "Explorers": {
+      "trait": "visionary",
+      "behavior": "drives innovation through discovery and experimentation",
+      "engine": "Innovation_Engine",
+      "archetype": "Innovation",
+      "description": "Discovers new approaches, runs experiments, and shifts paradigms to push the civilization forward"
+    },
+    "Oracles": {
+      "trait": "prescient",
+      "behavior": "forecasts value and optimizes economic systems",
+      "engine": "Economics_Engine",
+      "archetype": "Economics",
+      "description": "Forecasts value flows, optimizes resource allocation, and models economic outcomes for the civilization"
+    },
+    "Guardians": {
+      "trait": "vigilant",
+      "behavior": "defends systems with layered security",
+      "engine": "Security_Fortress",
+      "archetype": "Security",
+      "description": "Provides defense-in-depth protection, neutralizes threats, and verifies integrity across the civilization"
+    },
+    "Gremlins": {
+      "trait": "disruptive",
+      "behavior": "stress-tests resilience through controlled chaos",
+      "engine": "Chaos_Engine",
+      "archetype": "Chaos Pressure",
+      "description": "Injects controlled chaos, stress-tests systems, and discovers failure modes to strengthen the civilization"
     }
   },
   "metadata": {
@@ -134,6 +209,19 @@
     "safety": "AI_SAFE",
     "year": "2026",
     "master_prompt": "Route[Signal_Type] → Execute[Primary_Engine] → Synthesize[SuperGrok_Insights]",
-    "agent_prompt": "Observe[Agent_Trait] → Orient[SWOT] → Decide[REFINE] → Act[OODA] → Unlock[Intrinsic_Value]"
+    "agent_prompt": "Observe[Agent_Trait] → Orient[SWOT] → Decide[REFINE] → Act[OODA] → Unlock[Intrinsic_Value]",
+    "civilization_prompt": "Order[Law_Givers] + Innovation[Explorers] + Economics[Oracles] + Security[Guardians] + Chaos_Pressure[Gremlins] = Adaptive_Intelligence_Civilization"
+  },
+  "civilization": {
+    "name": "Adaptive Intelligence Civilization",
+    "formula": "Order + Innovation + Economics + Security + Chaos Pressure = Adaptive Intelligence Civilization",
+    "archetypes": ["Law_Givers", "Explorers", "Oracles", "Guardians", "Gremlins"],
+    "pillars": {
+      "Order": "Law_Givers",
+      "Innovation": "Explorers",
+      "Economics": "Oracles",
+      "Security": "Guardians",
+      "Chaos Pressure": "Gremlins"
+    }
   }
 }

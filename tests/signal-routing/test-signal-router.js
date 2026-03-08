@@ -18,7 +18,10 @@ import {
     executeMasterPrompt,
     getAgents,
     getAgentDetails,
-    executeAgentPrompt
+    executeAgentPrompt,
+    getCivilization,
+    getCivilizationArchetypes,
+    forgeAdaptiveIntelligence
 } from '../../skills/signal-routing/signal-router.js';
 
 console.log('Starting Signal Router Tests...\n');
@@ -82,7 +85,7 @@ console.log('Test 3: Get available signal types');
 try {
     const signalTypes = getAvailableSignalTypes();
     assert(Array.isArray(signalTypes), 'Should return an array');
-    assert(signalTypes.length === 13, 'Should have 13 signal types');
+    assert(signalTypes.length === 18, 'Should have 18 signal types');
     assert(signalTypes.includes('Tommy_Vectors'), 'Should include Tommy_Vectors');
     assert(signalTypes.includes('Policies'), 'Should include Policies');
     assert(signalTypes.includes('KPI_Robot'), 'Should include KPI_Robot');
@@ -101,7 +104,7 @@ console.log('Test 4: Get available engines');
 try {
     const engines = getAvailableEngines();
     assert(Array.isArray(engines), 'Should return an array');
-    assert(engines.length === 13, 'Should have 13 engines');
+    assert(engines.length === 18, 'Should have 18 engines');
     assert(engines.includes('Behavior_Forecasting'), 'Should include Behavior_Forecasting');
     assert(engines.includes('Compliance_Mapper'), 'Should include Compliance_Mapper');
     assert(engines.includes('Code_Updater'), 'Should include Code_Updater');
@@ -322,6 +325,163 @@ try {
     console.log('✓ Metadata includes SWOT-AI-REFINE-OODA and AI_SAFE\n');
 } catch (error) {
     console.error('✗ Metadata check failed:', error.message);
+    process.exit(1);
+}
+
+console.log('='.repeat(50));
+console.log('Civilization Archetype Tests');
+console.log('='.repeat(50) + '\n');
+
+// Shared civilization archetype configuration
+const civilizationArchetypes = [
+    { agent: 'Law_Givers', trait: 'principled', engine: 'Order_Engine', signal: 'Law_Givers', archetype: 'Order' },
+    { agent: 'Explorers', trait: 'visionary', engine: 'Innovation_Engine', signal: 'Explorers', archetype: 'Innovation' },
+    { agent: 'Oracles', trait: 'prescient', engine: 'Economics_Engine', signal: 'Oracles', archetype: 'Economics' },
+    { agent: 'Guardians', trait: 'vigilant', engine: 'Security_Fortress', signal: 'Guardians', archetype: 'Security' },
+    { agent: 'Gremlins', trait: 'disruptive', engine: 'Chaos_Engine', signal: 'Gremlins', archetype: 'Chaos Pressure' }
+];
+
+// Test 18: Civilization archetype signals route correctly
+console.log('Test 18: Route civilization archetype signals');
+try {
+    civilizationArchetypes.forEach(({ signal, engine }) => {
+        const result = routeSignal(signal);
+        assert(result.engine === engine,
+            `${signal} should route to ${engine}, got ${result.engine}`);
+        assert(result.signalType === signal, 'Signal type should be preserved');
+        assert(result.description, 'Result should include engine description');
+        assert(result.capabilities, 'Result should include capabilities');
+        console.log(`✓ ${signal} → ${result.engine}`);
+    });
+    console.log('✓ All civilization archetype signals routed correctly\n');
+} catch (error) {
+    console.error('✗ Civilization archetype routing failed:', error.message);
+    process.exit(1);
+}
+
+// Test 19: Civilization archetype agent details
+console.log('Test 19: Get civilization archetype agent details');
+try {
+    civilizationArchetypes.forEach(({ agent, trait, engine, archetype }) => {
+        const details = getAgentDetails(agent);
+        assert(details.name === agent, `${agent} should have correct name`);
+        assert(details.trait === trait, `${agent} should have trait '${trait}', got '${details.trait}'`);
+        assert(details.engine === engine, `${agent} should use engine '${engine}', got '${details.engine}'`);
+        assert(details.archetype === archetype, `${agent} should have archetype '${archetype}'`);
+        assert(details.behavior, `${agent} should have a behavior description`);
+        console.log(`✓ ${agent} (${trait}) → ${engine} [${archetype}]`);
+    });
+    console.log('✓ All civilization archetype details retrieved correctly\n');
+} catch (error) {
+    console.error('✗ Civilization archetype details failed:', error.message);
+    process.exit(1);
+}
+
+// Test 20: Execute agent prompt for civilization archetypes
+console.log('Test 20: Execute agent prompt for civilization archetypes');
+try {
+    civilizationArchetypes.forEach(({ agent, trait }) => {
+        const execution = executeAgentPrompt(agent);
+        assert(execution.agent === agent, `Should reference ${agent}`);
+        assert(execution.trait === trait, `Should have ${trait} trait`);
+        assert(execution.execution.step1_observe, 'Should have observe step');
+        assert(execution.execution.step5_unlock === 'Intrinsic_Value', 'Should unlock intrinsic value');
+        assert(execution.execution.safety === 'AI_SAFE', 'Should be AI_SAFE');
+        console.log(`✓ ${agent} SWOT-AI-REFINE-OODA executed`);
+    });
+    console.log('✓ All civilization archetype prompts executed correctly\n');
+} catch (error) {
+    console.error('✗ Civilization archetype prompt execution failed:', error.message);
+    process.exit(1);
+}
+
+// Test 21: Get civilization configuration
+console.log('Test 21: Get civilization configuration');
+try {
+    const civilization = getCivilization();
+    assert(civilization.name === 'Adaptive Intelligence Civilization', 'Should have correct name');
+    assert(civilization.formula, 'Should have formula');
+    assert(Array.isArray(civilization.archetypes), 'Should have archetypes array');
+    assert(civilization.archetypes.length === 5, 'Should have 5 archetypes');
+    assert(civilization.archetypes.includes('Law_Givers'), 'Should include Law_Givers');
+    assert(civilization.archetypes.includes('Explorers'), 'Should include Explorers');
+    assert(civilization.archetypes.includes('Oracles'), 'Should include Oracles');
+    assert(civilization.archetypes.includes('Guardians'), 'Should include Guardians');
+    assert(civilization.archetypes.includes('Gremlins'), 'Should include Gremlins');
+    assert(civilization.pillars, 'Should have pillars mapping');
+    assert(civilization.pillars['Order'] === 'Law_Givers', 'Order pillar should map to Law_Givers');
+    assert(civilization.pillars['Innovation'] === 'Explorers', 'Innovation pillar should map to Explorers');
+    assert(civilization.pillars['Economics'] === 'Oracles', 'Economics pillar should map to Oracles');
+    assert(civilization.pillars['Security'] === 'Guardians', 'Security pillar should map to Guardians');
+    assert(civilization.pillars['Chaos Pressure'] === 'Gremlins', 'Chaos Pressure pillar should map to Gremlins');
+    console.log(`✓ Civilization: ${civilization.name}`);
+    console.log(`✓ Formula: ${civilization.formula}\n`);
+} catch (error) {
+    console.error('✗ Civilization configuration failed:', error.message);
+    process.exit(1);
+}
+
+// Test 22: Get civilization archetypes
+console.log('Test 22: Get civilization archetypes');
+try {
+    const archetypes = getCivilizationArchetypes();
+    assert(Array.isArray(archetypes), 'Should return an array');
+    assert(archetypes.length === 5, 'Should have 5 archetypes');
+    archetypes.forEach(archetype => {
+        assert(archetype.name, 'Each archetype should have a name');
+        assert(archetype.trait, 'Each archetype should have a trait');
+        assert(archetype.engine, 'Each archetype should have an engine');
+        assert(archetype.archetype, 'Each archetype should have a pillar archetype');
+        console.log(`✓ ${archetype.name} (${archetype.trait}) → ${archetype.archetype}`);
+    });
+    console.log('✓ All civilization archetypes retrieved correctly\n');
+} catch (error) {
+    console.error('✗ Civilization archetypes failed:', error.message);
+    process.exit(1);
+}
+
+// Test 23: Forge Adaptive Intelligence Civilization
+console.log('Test 23: Forge Adaptive Intelligence Civilization');
+try {
+    const result = forgeAdaptiveIntelligence();
+    assert(result.civilization === 'Adaptive Intelligence Civilization', 'Should produce correct civilization name');
+    assert(result.formula, 'Should have formula');
+    assert(result.civilizationPrompt, 'Should have civilization prompt');
+    assert(Array.isArray(result.pillars), 'Should have pillars array');
+    assert(result.pillars.length === 5, 'Should have 5 pillars');
+    assert(result.forgedAt, 'Should have forged timestamp');
+    assert(result.safety === 'AI_SAFE', 'Should be AI_SAFE');
+
+    const expectedPillars = ['Order', 'Innovation', 'Economics', 'Security', 'Chaos Pressure'];
+    result.pillars.forEach((pillar, i) => {
+        assert(pillar.pillar === expectedPillars[i],
+            `Pillar ${i} should be '${expectedPillars[i]}', got '${pillar.pillar}'`);
+        assert(pillar.archetype, `Pillar ${pillar.pillar} should have archetype`);
+        assert(pillar.trait, `Pillar ${pillar.pillar} should have trait`);
+        assert(pillar.engine, `Pillar ${pillar.pillar} should have engine`);
+        console.log(`✓ ${pillar.pillar}: ${pillar.archetype} (${pillar.trait}) → ${pillar.engine}`);
+    });
+
+    console.log(`✓ Civilization forged: ${result.civilization}`);
+    console.log(`✓ Prompt: ${result.civilizationPrompt}\n`);
+} catch (error) {
+    console.error('✗ Forge civilization failed:', error.message);
+    process.exit(1);
+}
+
+// Test 24: Metadata includes civilization prompt
+console.log('Test 24: Metadata includes civilization prompt');
+try {
+    const metadata = getSystemMetadata();
+    assert(metadata.civilization_prompt,
+        'Metadata should include civilization_prompt');
+    assert(metadata.civilization_prompt.includes('Law_Givers'),
+        'Civilization prompt should reference Law_Givers');
+    assert(metadata.civilization_prompt.includes('Adaptive_Intelligence_Civilization'),
+        'Civilization prompt should reference Adaptive_Intelligence_Civilization');
+    console.log(`✓ Civilization prompt: ${metadata.civilization_prompt}\n`);
+} catch (error) {
+    console.error('✗ Civilization metadata check failed:', error.message);
     process.exit(1);
 }
 
