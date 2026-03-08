@@ -36,7 +36,7 @@ const agentConfig = [
 console.log('Test 1: Load signal-engine mapping configuration');
 try {
     const config = loadSignalEngineMapping();
-    assert(config.version === '1.1.0', 'Config version should be 1.1.0');
+    assert(config.version === '1.2.0', 'Config version should be 1.2.0');
     assert(config.mappings, 'Config should have mappings');
     assert(config.engines, 'Config should have engines');
     assert(config.agents, 'Config should have agents');
@@ -82,7 +82,7 @@ console.log('Test 3: Get available signal types');
 try {
     const signalTypes = getAvailableSignalTypes();
     assert(Array.isArray(signalTypes), 'Should return an array');
-    assert(signalTypes.length === 13, 'Should have 13 signal types');
+    assert(signalTypes.length === 21, 'Should have 21 signal types');
     assert(signalTypes.includes('Tommy_Vectors'), 'Should include Tommy_Vectors');
     assert(signalTypes.includes('Policies'), 'Should include Policies');
     assert(signalTypes.includes('KPI_Robot'), 'Should include KPI_Robot');
@@ -90,6 +90,14 @@ try {
     assert(signalTypes.includes('Brians_Bee'), 'Should include Brians_Bee');
     assert(signalTypes.includes('Kid_Wendy'), 'Should include Kid_Wendy');
     assert(signalTypes.includes('Lakers_Dragon'), 'Should include Lakers_Dragon');
+    assert(signalTypes.includes('Content_Input'), 'Should include Content_Input');
+    assert(signalTypes.includes('Transcript'), 'Should include Transcript');
+    assert(signalTypes.includes('Parsed_Semantics'), 'Should include Parsed_Semantics');
+    assert(signalTypes.includes('Vector_Features'), 'Should include Vector_Features');
+    assert(signalTypes.includes('Evidence_Bundle'), 'Should include Evidence_Bundle');
+    assert(signalTypes.includes('Bias_Analysis'), 'Should include Bias_Analysis');
+    assert(signalTypes.includes('Narrative_Frame'), 'Should include Narrative_Frame');
+    assert(signalTypes.includes('Scored_Signal'), 'Should include Scored_Signal');
     console.log(`✓ Found ${signalTypes.length} signal types: ${signalTypes.join(', ')}\n`);
 } catch (error) {
     console.error('✗ Get signal types failed:', error.message);
@@ -101,7 +109,7 @@ console.log('Test 4: Get available engines');
 try {
     const engines = getAvailableEngines();
     assert(Array.isArray(engines), 'Should return an array');
-    assert(engines.length === 13, 'Should have 13 engines');
+    assert(engines.length === 21, 'Should have 21 engines');
     assert(engines.includes('Behavior_Forecasting'), 'Should include Behavior_Forecasting');
     assert(engines.includes('Compliance_Mapper'), 'Should include Compliance_Mapper');
     assert(engines.includes('Code_Updater'), 'Should include Code_Updater');
@@ -109,6 +117,14 @@ try {
     assert(engines.includes('Hive_Syncer'), 'Should include Hive_Syncer');
     assert(engines.includes('App_Coordinator'), 'Should include App_Coordinator');
     assert(engines.includes('Security_Guardian'), 'Should include Security_Guardian');
+    assert(engines.includes('Transcript_Extractor'), 'Should include Transcript_Extractor');
+    assert(engines.includes('Semantic_Parser'), 'Should include Semantic_Parser');
+    assert(engines.includes('Vector_Classifier'), 'Should include Vector_Classifier');
+    assert(engines.includes('PRISM_RAG_Retriever'), 'Should include PRISM_RAG_Retriever');
+    assert(engines.includes('Propaganda_Bias_Detector'), 'Should include Propaganda_Bias_Detector');
+    assert(engines.includes('Narrative_Frame_Analyzer'), 'Should include Narrative_Frame_Analyzer');
+    assert(engines.includes('Signal_Scorer'), 'Should include Signal_Scorer');
+    assert(engines.includes('Decision_Reporter'), 'Should include Decision_Reporter');
     console.log(`✓ Found ${engines.length} engines: ${engines.join(', ')}\n`);
 } catch (error) {
     console.error('✗ Get engines failed:', error.message);
