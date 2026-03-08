@@ -18,7 +18,8 @@ import {
     executeMasterPrompt,
     getAgents,
     getAgentDetails,
-    executeAgentPrompt
+    executeAgentPrompt,
+    calculateMonthlyRevenue
 } from '../../skills/signal-routing/signal-router.js';
 
 console.log('Starting Signal Router Tests...\n');
@@ -322,6 +323,46 @@ try {
     console.log('✓ Metadata includes SWOT-AI-REFINE-OODA and AI_SAFE\n');
 } catch (error) {
     console.error('✗ Metadata check failed:', error.message);
+    process.exit(1);
+}
+
+// Test 18: Calculate monthly revenue and ARR
+console.log('Test 18: Calculate monthly revenue and ARR');
+try {
+    const result = calculateMonthlyRevenue(10000, 30);
+    assert(result.users === 10000, 'Should preserve user count');
+    assert(result.pricePerMonth === 30, 'Should preserve price per month');
+    assert(result.monthlyRevenue === 300000, '10,000 users × $30/month = $300,000 monthly revenue');
+    assert(result.arr === 3600000, '$300,000/month × 12 = $3,600,000 ARR');
+    console.log(`✓ ${result.users.toLocaleString()} users × $${result.pricePerMonth}/month = $${result.monthlyRevenue.toLocaleString()} monthly revenue`);
+    console.log(`✓ ARR = $${result.arr.toLocaleString()} (~$${(result.arr / 1e6).toFixed(1)}M)\n`);
+} catch (error) {
+    console.error('✗ Monthly revenue calculation failed:', error.message);
+    process.exit(1);
+}
+
+// Test 18b: Edge cases for calculateMonthlyRevenue
+console.log('Test 18b: Edge cases for calculateMonthlyRevenue');
+try {
+    const zeroUsers = calculateMonthlyRevenue(0, 30);
+    assert(zeroUsers.monthlyRevenue === 0, 'Zero users should give zero revenue');
+    assert(zeroUsers.arr === 0, 'Zero users should give zero ARR');
+
+    const zeroPrice = calculateMonthlyRevenue(10000, 0);
+    assert(zeroPrice.monthlyRevenue === 0, 'Zero price should give zero revenue');
+    assert(zeroPrice.arr === 0, 'Zero price should give zero ARR');
+
+    let threw = false;
+    try { calculateMonthlyRevenue(-1, 30); } catch (e) { threw = true; }
+    assert(threw, 'Negative users should throw');
+
+    threw = false;
+    try { calculateMonthlyRevenue(100, -5); } catch (e) { threw = true; }
+    assert(threw, 'Negative price should throw');
+
+    console.log('✓ Edge cases handled correctly\n');
+} catch (error) {
+    console.error('✗ Edge case handling failed:', error.message);
     process.exit(1);
 }
 
