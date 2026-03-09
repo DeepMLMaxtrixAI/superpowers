@@ -36,7 +36,7 @@ const agentConfig = [
 console.log('Test 1: Load signal-engine mapping configuration');
 try {
     const config = loadSignalEngineMapping();
-    assert(config.version === '1.1.0', 'Config version should be 1.1.0');
+    assert(config.version === '1.2.0', 'Config version should be 1.2.0');
     assert(config.mappings, 'Config should have mappings');
     assert(config.engines, 'Config should have engines');
     assert(config.agents, 'Config should have agents');
@@ -57,6 +57,7 @@ const testSignals = [
     { signal: 'Claims', expectedEngine: 'Evidence_Verifier' },
     { signal: 'Events', expectedEngine: 'Timeline_Tensorizer' },
     { signal: 'Policies', expectedEngine: 'Compliance_Mapper' },
+    { signal: 'Deep_Think', expectedEngine: 'Deep_Think_Pipeline' },
     ...agentConfig.map(({ signal, engine }) => ({ signal, expectedEngine: engine }))
 ];
 
@@ -82,7 +83,7 @@ console.log('Test 3: Get available signal types');
 try {
     const signalTypes = getAvailableSignalTypes();
     assert(Array.isArray(signalTypes), 'Should return an array');
-    assert(signalTypes.length === 13, 'Should have 13 signal types');
+    assert(signalTypes.length === 14, 'Should have 14 signal types');
     assert(signalTypes.includes('Tommy_Vectors'), 'Should include Tommy_Vectors');
     assert(signalTypes.includes('Policies'), 'Should include Policies');
     assert(signalTypes.includes('KPI_Robot'), 'Should include KPI_Robot');
@@ -90,6 +91,7 @@ try {
     assert(signalTypes.includes('Brians_Bee'), 'Should include Brians_Bee');
     assert(signalTypes.includes('Kid_Wendy'), 'Should include Kid_Wendy');
     assert(signalTypes.includes('Lakers_Dragon'), 'Should include Lakers_Dragon');
+    assert(signalTypes.includes('Deep_Think'), 'Should include Deep_Think');
     console.log(`✓ Found ${signalTypes.length} signal types: ${signalTypes.join(', ')}\n`);
 } catch (error) {
     console.error('✗ Get signal types failed:', error.message);
@@ -101,7 +103,7 @@ console.log('Test 4: Get available engines');
 try {
     const engines = getAvailableEngines();
     assert(Array.isArray(engines), 'Should return an array');
-    assert(engines.length === 13, 'Should have 13 engines');
+    assert(engines.length === 14, 'Should have 14 engines');
     assert(engines.includes('Behavior_Forecasting'), 'Should include Behavior_Forecasting');
     assert(engines.includes('Compliance_Mapper'), 'Should include Compliance_Mapper');
     assert(engines.includes('Code_Updater'), 'Should include Code_Updater');
@@ -109,6 +111,7 @@ try {
     assert(engines.includes('Hive_Syncer'), 'Should include Hive_Syncer');
     assert(engines.includes('App_Coordinator'), 'Should include App_Coordinator');
     assert(engines.includes('Security_Guardian'), 'Should include Security_Guardian');
+    assert(engines.includes('Deep_Think_Pipeline'), 'Should include Deep_Think_Pipeline');
     console.log(`✓ Found ${engines.length} engines: ${engines.join(', ')}\n`);
 } catch (error) {
     console.error('✗ Get engines failed:', error.message);
@@ -322,6 +325,25 @@ try {
     console.log('✓ Metadata includes SWOT-AI-REFINE-OODA and AI_SAFE\n');
 } catch (error) {
     console.error('✗ Metadata check failed:', error.message);
+    process.exit(1);
+}
+
+// Test 18: Deep_Think signal routes to Deep_Think_Pipeline
+console.log('Test 18: Deep_Think signal routes to Deep_Think_Pipeline engine');
+try {
+    const result = routeSignal('Deep_Think');
+    assert(result.engine === 'Deep_Think_Pipeline', 'Deep_Think should route to Deep_Think_Pipeline');
+    assert(result.signalType === 'Deep_Think', 'Signal type should be preserved');
+    assert(Array.isArray(result.capabilities), 'Result should include capabilities');
+    assert(result.capabilities.includes('vector_classification'), 'Should include vector_classification');
+    assert(result.capabilities.includes('decision_blueprint'), 'Should include decision_blueprint');
+    assert(Array.isArray(result.safety), 'Result should include safety guardrails');
+    assert(result.safety.includes('hallucination_probability_alerts'), 'Should include hallucination_probability_alerts');
+    assert(result.safety.includes('adversarial_network_triggers'), 'Should include adversarial_network_triggers');
+    console.log(`✓ Deep_Think → ${result.engine}`);
+    console.log('✓ Deep_Think signal routed correctly with pipeline capabilities and safety guardrails\n');
+} catch (error) {
+    console.error('✗ Deep_Think signal routing failed:', error.message);
     process.exit(1);
 }
 

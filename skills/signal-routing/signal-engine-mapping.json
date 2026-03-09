@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Signal-to-Engine routing configuration for intelligent AI processing",
   "mappings": {
     "Tommy_Vectors": "Behavior_Forecasting",
@@ -14,7 +14,8 @@
     "Auto_Owl": "Audit_Watcher",
     "Brians_Bee": "Hive_Syncer",
     "Kid_Wendy": "App_Coordinator",
-    "Lakers_Dragon": "Security_Guardian"
+    "Lakers_Dragon": "Security_Guardian",
+    "Deep_Think": "Deep_Think_Pipeline"
   },
   "engines": {
     "Behavior_Forecasting": {
@@ -91,6 +92,12 @@
       "trait": "protective",
       "capabilities": ["security_log_guarding", "threat_detection", "intrinsic_value_protection"],
       "frameworks": ["SWOT_Analysis", "OODA_Loop", "REFINE_Loop", "AI_SAFE"]
+    },
+    "Deep_Think_Pipeline": {
+      "description": "5-stage deep reasoning pipeline: Vector Classification → Noise Filtering → Domain Analysis → Constraint Checking → Decision Blueprint",
+      "capabilities": ["vector_classification", "noise_filtering", "domain_analysis", "constraint_checking", "decision_blueprint"],
+      "frameworks": ["NAND_Boolean_Logic", "Mathematical_Matrix_NAND_Gates", "NLP", "DEEP_THINK", "Teacher_Yielded_Distillation"],
+      "safety": ["data_integrity_review", "explainability_checkpoints", "hallucination_probability_alerts", "grounding_verification_gates", "session_firewalling", "adversarial_network_triggers"]
     }
   },
   "agents": {
