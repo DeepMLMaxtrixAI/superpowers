@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Signal-to-Engine routing configuration for intelligent AI processing",
   "mappings": {
     "Tommy_Vectors": "Behavior_Forecasting",
@@ -10,6 +10,7 @@
     "Claims": "Evidence_Verifier",
     "Events": "Timeline_Tensorizer",
     "Policies": "Compliance_Mapper",
+    "Parenti_Interpretation": "Political_Economy_Analyzer",
     "KPI_Robot": "Code_Updater",
     "Auto_Owl": "Audit_Watcher",
     "Brians_Bee": "Hive_Syncer",
@@ -56,6 +57,20 @@
       "description": "Policy compliance mapping and verification",
       "capabilities": ["compliance_checking", "regulatory_mapping", "gap_analysis"],
       "frameworks": ["Compliance_Framework", "Policy_Analysis"]
+    },
+    "Political_Economy_Analyzer": {
+      "description": "Parenti Interpretation framework: economic imperialism theory, drug policy critique, and multi-perspective critics analysis",
+      "capabilities": ["economic_imperialism_analysis", "drug_policy_critique", "critics_framework", "geopolitical_assessment", "policy_complexity_mapping"],
+      "frameworks": ["Parenti_Framework", "Political_Economy_Analysis", "Critics_Triangulation"],
+      "pillars": {
+        "economic_imperialism_theory": "Analyzes foreign policy through the lens of corporate and capital interests driving imperial interventions",
+        "drug_policy_critique": "Examines drug war policies as instruments of political control and economic intervention",
+        "critics": {
+          "security_explanations": "Counter-perspective emphasizing national security rationales",
+          "geopolitical_strategy": "Counter-perspective grounded in great-power competition and regional influence",
+          "policy_complexity": "Counter-perspective acknowledging multi-causal, non-reductive policy drivers"
+        }
+      }
     },
     "Code_Updater": {
       "description": "Real-time KPI-triggered code update engine (KPI Robot - excited)",

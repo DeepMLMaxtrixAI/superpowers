@@ -36,7 +36,7 @@ const agentConfig = [
 console.log('Test 1: Load signal-engine mapping configuration');
 try {
     const config = loadSignalEngineMapping();
-    assert(config.version === '1.1.0', 'Config version should be 1.1.0');
+    assert(config.version === '1.2.0', 'Config version should be 1.2.0');
     assert(config.mappings, 'Config should have mappings');
     assert(config.engines, 'Config should have engines');
     assert(config.agents, 'Config should have agents');
@@ -57,6 +57,7 @@ const testSignals = [
     { signal: 'Claims', expectedEngine: 'Evidence_Verifier' },
     { signal: 'Events', expectedEngine: 'Timeline_Tensorizer' },
     { signal: 'Policies', expectedEngine: 'Compliance_Mapper' },
+    { signal: 'Parenti_Interpretation', expectedEngine: 'Political_Economy_Analyzer' },
     ...agentConfig.map(({ signal, engine }) => ({ signal, expectedEngine: engine }))
 ];
 
@@ -82,9 +83,10 @@ console.log('Test 3: Get available signal types');
 try {
     const signalTypes = getAvailableSignalTypes();
     assert(Array.isArray(signalTypes), 'Should return an array');
-    assert(signalTypes.length === 13, 'Should have 13 signal types');
+    assert(signalTypes.length === 14, 'Should have 14 signal types');
     assert(signalTypes.includes('Tommy_Vectors'), 'Should include Tommy_Vectors');
     assert(signalTypes.includes('Policies'), 'Should include Policies');
+    assert(signalTypes.includes('Parenti_Interpretation'), 'Should include Parenti_Interpretation');
     assert(signalTypes.includes('KPI_Robot'), 'Should include KPI_Robot');
     assert(signalTypes.includes('Auto_Owl'), 'Should include Auto_Owl');
     assert(signalTypes.includes('Brians_Bee'), 'Should include Brians_Bee');
@@ -101,9 +103,10 @@ console.log('Test 4: Get available engines');
 try {
     const engines = getAvailableEngines();
     assert(Array.isArray(engines), 'Should return an array');
-    assert(engines.length === 13, 'Should have 13 engines');
+    assert(engines.length === 14, 'Should have 14 engines');
     assert(engines.includes('Behavior_Forecasting'), 'Should include Behavior_Forecasting');
     assert(engines.includes('Compliance_Mapper'), 'Should include Compliance_Mapper');
+    assert(engines.includes('Political_Economy_Analyzer'), 'Should include Political_Economy_Analyzer');
     assert(engines.includes('Code_Updater'), 'Should include Code_Updater');
     assert(engines.includes('Audit_Watcher'), 'Should include Audit_Watcher');
     assert(engines.includes('Hive_Syncer'), 'Should include Hive_Syncer');

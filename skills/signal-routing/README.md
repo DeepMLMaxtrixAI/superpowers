@@ -42,6 +42,7 @@ console.log(getRoutingTable());
 | `Claims` | Evidence_Verifier | Claims validation and verification |
 | `Events` | Timeline_Tensorizer | Event sequencing and temporal analysis |
 | `Policies` | Compliance_Mapper | Policy compliance checking |
+| `Parenti_Interpretation` | Political_Economy_Analyzer | Economic imperialism, drug policy critique, and critics analysis |
 
 ## API Reference
 
