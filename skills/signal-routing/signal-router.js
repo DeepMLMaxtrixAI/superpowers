@@ -212,3 +212,64 @@ export function executeAgentPrompt(agentName) {
         }
     };
 }
+
+/**
+ * Get the civilization configuration
+ * @returns {Object} Civilization definition with name, formula, archetypes, and pillars
+ */
+export function getCivilization() {
+    const config = loadSignalEngineMapping();
+    return config.civilization || {};
+}
+
+/**
+ * Get all civilization archetype agents
+ * @returns {Array<Object>} Array of archetype agent details with pillar information
+ */
+export function getCivilizationArchetypes() {
+    const config = loadSignalEngineMapping();
+    const civilization = config.civilization || {};
+    const archetypes = civilization.archetypes || [];
+    const agents = config.agents || {};
+
+    return archetypes.map(name => {
+        const agent = agents[name];
+        if (!agent) return { name, error: `Agent ${name} not found` };
+        return {
+            name,
+            ...agent
+        };
+    });
+}
+
+/**
+ * Forge the Adaptive Intelligence Civilization by combining all five archetype pillars.
+ * Executes each archetype agent through SWOT-AI-REFINE-OODA and synthesizes the result.
+ * @returns {Object} Civilization synthesis with all pillar contributions
+ */
+export function forgeAdaptiveIntelligence() {
+    const config = loadSignalEngineMapping();
+    const civilization = config.civilization || {};
+    const metadata = config.metadata || {};
+    const archetypes = civilization.archetypes || [];
+
+    const pillars = archetypes.map(name => {
+        const execution = executeAgentPrompt(name);
+        return {
+            archetype: name,
+            pillar: config.agents[name].archetype,
+            trait: execution.trait,
+            behavior: execution.behavior,
+            engine: execution.execution.engine.name
+        };
+    });
+
+    return {
+        civilization: civilization.name,
+        formula: civilization.formula,
+        civilizationPrompt: metadata.civilization_prompt,
+        pillars,
+        forgedAt: new Date().toISOString(),
+        safety: metadata.safety || 'AI_SAFE'
+    };
+}

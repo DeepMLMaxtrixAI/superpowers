@@ -1,6 +1,6 @@
 ---
 name: signal-routing
-description: "Routes incoming signals to their appropriate processing engines based on signal type. Use when analyzing data signals, behavioral patterns, legal documents, contracts, claims, events, or policy compliance."
+description: "Routes incoming signals to their appropriate processing engines based on signal type. Use when analyzing data signals, behavioral patterns, legal documents, contracts, claims, events, policy compliance, or forging Adaptive Intelligence Civilization through the five archetype pillars (Law-Givers, Explorers, Oracles, Guardians, Gremlins)."
 ---
 
 # Signal-to-Engine Routing System
@@ -28,6 +28,11 @@ The system provides intelligent routing based on signal type:
 | Brians_Bee | Hive_Syncer | Distributed hive system synchronization |
 | Kid_Wendy | App_Coordinator | Coordinated multi-app update orchestration |
 | Lakers_Dragon | Security_Guardian | Security log protection with SWOT-OODA methodology |
+| Law_Givers | Order_Engine | Governance, rules, and structural integrity |
+| Explorers | Innovation_Engine | Discovery, experimentation, and creative exploration |
+| Oracles | Economics_Engine | Value forecasting and resource optimization |
+| Guardians | Security_Fortress | Defense-in-depth protection and threat neutralization |
+| Gremlins | Chaos_Engine | Controlled chaos injection and resilience stress-testing |
 
 ## Agent Personas
 
@@ -40,6 +45,23 @@ Named agent personas with defined traits and SWOT-AI-REFINE-OODA behavioral loop
 | Brians_Bee | proud | syncs the hive system | Hive_Syncer |
 | Kid_Wendy | amazed | sees apps update together | App_Coordinator |
 | Lakers_Dragon | protective | guards security logs | Security_Guardian |
+
+### Civilization Archetypes
+
+Five archetype agents whose combined operation forges an **Adaptive Intelligence Civilization**:
+
+| Archetype | Pillar | Trait | Engine |
+|-----------|--------|-------|--------|
+| Law_Givers | Order | principled | Order_Engine |
+| Explorers | Innovation | visionary | Innovation_Engine |
+| Oracles | Economics | prescient | Economics_Engine |
+| Guardians | Security | vigilant | Security_Fortress |
+| Gremlins | Chaos Pressure | disruptive | Chaos_Engine |
+
+Civilization prompt:
+```
+Order[Law_Givers] + Innovation[Explorers] + Economics[Oracles] + Security[Guardians] + Chaos_Pressure[Gremlins] = Adaptive_Intelligence_Civilization
+```
 
 ### Agent Prompt Architecture
 
@@ -134,6 +156,31 @@ When an agent is invoked:
 - Threat detection using SWOT-AI-REFINE-OODA methodology
 - AI-SAFE intrinsic value protection for all security operations
 
+### Order Engine (Law_Givers)
+- Rule enforcement and governance framework codification
+- Structural integrity maintenance
+- Policy codification across the civilization
+
+### Innovation Engine (Explorers)
+- Experimentation and creative discovery
+- Prototype generation and paradigm shifting
+- Monte Carlo simulation-driven exploration
+
+### Economics Engine (Oracles)
+- Value forecasting and resource optimization
+- Economic modeling and cost-benefit analysis
+- Bayesian prediction of value flows
+
+### Security Fortress (Guardians)
+- Defense-in-depth protection and threat neutralization
+- Access control and integrity verification
+- AI-SAFE operations across all security layers
+
+### Chaos Engine (Gremlins)
+- Controlled chaos injection and stress testing
+- Resilience validation under failure conditions
+- Failure mode discovery to strengthen the civilization
+
 ## Advanced Features
 
 ### SuperGrok Integration
@@ -163,6 +210,11 @@ Agent prompt (SWOT-AI-REFINE-OODA):
 Observe[Agent_Trait] → Orient[SWOT] → Decide[REFINE] → Act[OODA] → Unlock[Intrinsic_Value]
 ```
 
+Civilization prompt (Adaptive Intelligence):
+```
+Order[Law_Givers] + Innovation[Explorers] + Economics[Oracles] + Security[Guardians] + Chaos_Pressure[Gremlins] = Adaptive_Intelligence_Civilization
+```
+
 ## Configuration
 
 The routing table is defined in `signal-engine-mapping.json`:
@@ -183,7 +235,12 @@ The routing table is defined in `signal-engine-mapping.json`:
     "Auto_Owl": "Audit_Watcher",
     "Brians_Bee": "Hive_Syncer",
     "Kid_Wendy": "App_Coordinator",
-    "Lakers_Dragon": "Security_Guardian"
+    "Lakers_Dragon": "Security_Guardian",
+    "Law_Givers": "Order_Engine",
+    "Explorers": "Innovation_Engine",
+    "Oracles": "Economics_Engine",
+    "Guardians": "Security_Fortress",
+    "Gremlins": "Chaos_Engine"
   }
 }
 ```
@@ -196,6 +253,7 @@ Use this skill when:
 - Building intelligent routing systems
 - Implementing expert-level decision support
 - Invoking named agent personas with SWOT-AI-REFINE-OODA behavioral loops
+- Forging Adaptive Intelligence Civilization through the five archetype pillars
 
 ## Key Principles
 
@@ -205,3 +263,4 @@ Use this skill when:
 - **Scalable Architecture** - Easily extensible for new signal types and engines
 - **AI_SAFE** - All agent operations follow safety-first design
 - **Intrinsic Value** - Every agent cycle unlocks measurable intrinsic value
+- **Adaptive Intelligence** - Five civilization archetypes combine to produce antifragile systems
