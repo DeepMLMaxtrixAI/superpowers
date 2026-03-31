@@ -187,6 +187,24 @@ export function getAgentDetails(agentName) {
 }
 
 /**
+ * Calculate monthly revenue and ARR from user count and monthly price
+ * @param {number} users - Number of active users
+ * @param {number} pricePerMonth - Monthly price per user in dollars
+ * @returns {Object} Revenue metrics including monthlyRevenue and arr
+ */
+export function calculateMonthlyRevenue(users, pricePerMonth) {
+    if (typeof users !== 'number' || users < 0) {
+        throw new Error('users must be a non-negative number');
+    }
+    if (typeof pricePerMonth !== 'number' || pricePerMonth < 0) {
+        throw new Error('pricePerMonth must be a non-negative number');
+    }
+    const monthlyRevenue = users * pricePerMonth;
+    const arr = monthlyRevenue * 12;
+    return { users, pricePerMonth, monthlyRevenue, arr };
+}
+
+/**
  * Execute the agent prompt using SWOT-AI-REFINE-OODA methodology
  * @param {string} agentName - Name of the agent to execute
  * @returns {Object} Agent execution result with OODA steps and intrinsic value unlock
