@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Signal-to-Engine routing configuration for intelligent AI processing",
   "mappings": {
     "Tommy_Vectors": "Behavior_Forecasting",
@@ -14,7 +14,15 @@
     "Auto_Owl": "Audit_Watcher",
     "Brians_Bee": "Hive_Syncer",
     "Kid_Wendy": "App_Coordinator",
-    "Lakers_Dragon": "Security_Guardian"
+    "Lakers_Dragon": "Security_Guardian",
+    "Content_Input": "Transcript_Extractor",
+    "Transcript": "Semantic_Parser",
+    "Parsed_Semantics": "Vector_Classifier",
+    "Vector_Features": "PRISM_RAG_Retriever",
+    "Evidence_Bundle": "Propaganda_Bias_Detector",
+    "Bias_Analysis": "Narrative_Frame_Analyzer",
+    "Narrative_Frame": "Signal_Scorer",
+    "Scored_Signal": "Decision_Reporter"
   },
   "engines": {
     "Behavior_Forecasting": {
@@ -91,6 +99,46 @@
       "trait": "protective",
       "capabilities": ["security_log_guarding", "threat_detection", "intrinsic_value_protection"],
       "frameworks": ["SWOT_Analysis", "OODA_Loop", "REFINE_Loop", "AI_SAFE"]
+    },
+    "Transcript_Extractor": {
+      "description": "Converts video, audio, and multimedia content into structured text transcripts",
+      "capabilities": ["speech_to_text", "video_transcription", "timestamp_alignment", "speaker_diarization"],
+      "frameworks": ["ASR_Pipeline", "Media_Processing"]
+    },
+    "Semantic_Parser": {
+      "description": "Parses transcripts into semantic units — claims, entities, themes, and intent",
+      "capabilities": ["entity_extraction", "claim_detection", "theme_identification", "intent_parsing"],
+      "frameworks": ["NLP_Semantic", "Dependency_Parsing"]
+    },
+    "Vector_Classifier": {
+      "description": "Encodes semantic units into vector embeddings and classifies them by topic and stance",
+      "capabilities": ["embedding_generation", "topic_classification", "stance_detection", "similarity_scoring"],
+      "frameworks": ["Dense_Retrieval", "Transformer_Embeddings"]
+    },
+    "PRISM_RAG_Retriever": {
+      "description": "Retrieves corroborating or contradicting evidence from a curated knowledge base via PRISM-RAG",
+      "capabilities": ["evidence_retrieval", "knowledge_grounding", "source_ranking", "context_augmentation"],
+      "frameworks": ["PRISM_RAG", "Dense_Passage_Retrieval"]
+    },
+    "Propaganda_Bias_Detector": {
+      "description": "Detects propaganda techniques, cognitive biases, and rhetorical manipulation patterns",
+      "capabilities": ["propaganda_detection", "bias_identification", "rhetorical_analysis", "manipulation_scoring"],
+      "frameworks": ["PTDC_Taxonomy", "Cognitive_Bias_Models"]
+    },
+    "Narrative_Frame_Analyzer": {
+      "description": "Identifies the overarching narrative frames and framing strategies used in the content",
+      "capabilities": ["frame_detection", "narrative_mapping", "framing_strategy_analysis", "ideological_tagging"],
+      "frameworks": ["Framing_Theory", "Narrative_Analysis"]
+    },
+    "Signal_Scorer": {
+      "description": "Aggregates pipeline outputs into a composite signal score across multiple dimensions",
+      "capabilities": ["score_aggregation", "multi_dimensional_scoring", "confidence_weighting", "threshold_flagging"],
+      "frameworks": ["Weighted_Scoring", "Bayesian_Aggregation"]
+    },
+    "Decision_Reporter": {
+      "description": "Generates a structured decision report summarising findings, evidence, and recommended actions",
+      "capabilities": ["report_generation", "finding_summarisation", "recommendation_synthesis", "audit_trail_creation"],
+      "frameworks": ["Structured_Reporting", "Evidence_Synthesis"]
     }
   },
   "agents": {
@@ -128,12 +176,13 @@
   "metadata": {
     "architecture": "SuperGrok Expert-level Mastery Roadmap",
     "design_process": "Blueprint Design Decision-Making Process Best Practices",
-    "methodologies": ["BANTA-ANTARCTICA", "JEDI_ABCDE-BAYES", "FORECASTERS", "MINING", "SWOT-AI-REFINE-OODA"],
-    "capabilities": ["UNLOCKS", "SURVIVAL", "IDEAS", "RAW CHALLENGES", "INTRINSIC_VALUE"],
-    "techniques": ["Monte Carlo Simulations", "OODA_Loop", "SWOT_Analysis", "REFINE_Loop"],
+    "methodologies": ["BANTA-ANTARCTICA", "JEDI_ABCDE-BAYES", "FORECASTERS", "MINING", "SWOT-AI-REFINE-OODA", "PRISM-RAG"],
+    "capabilities": ["UNLOCKS", "SURVIVAL", "IDEAS", "RAW CHALLENGES", "INTRINSIC_VALUE", "PROPAGANDA_DETECTION", "NARRATIVE_ANALYSIS"],
+    "techniques": ["Monte Carlo Simulations", "OODA_Loop", "SWOT_Analysis", "REFINE_Loop", "Dense_Retrieval", "Framing_Theory"],
     "safety": "AI_SAFE",
     "year": "2026",
     "master_prompt": "Route[Signal_Type] → Execute[Primary_Engine] → Synthesize[SuperGrok_Insights]",
-    "agent_prompt": "Observe[Agent_Trait] → Orient[SWOT] → Decide[REFINE] → Act[OODA] → Unlock[Intrinsic_Value]"
+    "agent_prompt": "Observe[Agent_Trait] → Orient[SWOT] → Decide[REFINE] → Act[OODA] → Unlock[Intrinsic_Value]",
+    "content_pipeline": "Content_Input → Transcript → Parsed_Semantics → Vector_Features → Evidence_Bundle → Bias_Analysis → Narrative_Frame → Scored_Signal → Decision_Report"
   }
 }
